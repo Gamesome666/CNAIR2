@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻详情</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* 导航栏样式 */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-dropdown {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .search-input {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            width: 350px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-btn {
+            padding: 8px 30px;
+            background-color: #0000CD;
+            color: #fff;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .search-btn:hover {
+            background-color: #0000B8;
+        }
+
+        .nav-bar {
+            background-color: #0000CD;
+        }
+
+        .nav-menu {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            flex: 1;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 40px 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 30px;
+        }
+
+        .article-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .article-meta span {
+            margin: 0 10px;
+        }
+
+        .article-content {
+            font-size: 16px;
+            color: #555;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+
+        .article-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .article-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-image-caption {
+            font-size: 14px;
+            color: #999;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 30px;
+            }
+
+            .article-title {
+                font-size: 24px;
+            }
+
+            .article-content {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="header-top">
+            <div class="logo">
+                <img src="文字和图片素材/image.png" alt="CNAIR.COM 航空旅游网">
+            </div>
+            <div class="search-box">
+                <select class="search-dropdown">
+                    <option>新闻▼</option>
+                </select>
+                <input type="text" class="search-input" placeholder="请输入新闻标题">
+                <button class="search-btn">搜 索</button>
+            </div>
+        </div>
+        <nav class="nav-bar">
+            <ul class="nav-menu">
+                <li><a href="#">首 页</a></li>
+                <li><a href="#">航旅新闻</a></li>
+                <li><a href="#">航旅图片</a></li>
+                <li><a href="#">酒店预订</a></li>
+                <li><a href="#">机票查询</a></li>
+                <li><a href="#">机票验真</a></li>
+                <li><a href="#">航空知识</a></li>
+                <li><a href="#">出行参考</a></li>
+                <li><a href="#">飞机机型</a></li>
+                <li><a href="#">旅游景点</a></li>
+                <li><a href="#">外国景点</a></li>
+                <li><a href="#">世界遗产</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 文章头部 -->
+        <div class="article-header">
+            <h1 class="article-title">机场气象设备维护与运行保障工作纪实</h1>
+            <div class="article-meta">
+                <span>发布时间：2025年10月22日</span>
+                <span>|</span>
+                <span>来源：本站</span>
+                <span>|</span>
+                <span>通讯员：曹智</span>
+            </div>
+        </div>
+
+        <!-- 文章内容 -->
+        <div class="article-content">
+            <p>为确保机场气象设备正常运行，保障航班安全起降，机场气象部门持续加强设备维护和运行保障工作。近日，气象技术人员对机场各类气象观测设备进行了全面检查和维护，确保设备运行稳定可靠。</p>
+
+            <!-- 文章配图1 -->
+            <div class="article-image">
+                <img src="文字和图片素材/21.png" alt="气象设备维护">
+                <div class="article-image-caption">气象技术人员正在对风向风速仪进行检查维护</div>
+            </div>
+
+            <p>气象观测设备是机场运行的重要基础设施，直接关系到航班的安全运行。技术人员定期对风向风速仪、能见度仪、云高仪等关键设备进行巡检和维护，及时发现并解决设备运行中的问题，确保气象数据的准确性和及时性。</p>
+
+            <!-- 文章配图2 -->
+            <div class="article-image">
+                <img src="文字和图片素材/22.png" alt="塔台工作">
+                <div class="article-image-caption">管制人员在塔台进行航班指挥调度工作</div>
+            </div>
+
+            <p>在塔台指挥中心，管制人员密切关注气象变化，根据实时气象数据科学调度航班起降。气象部门与塔台、运行指挥中心等部门保持密切沟通，及时通报天气变化情况，为航班运行提供准确的气象保障服务。</p>
+
+            <!-- 文章配图3 -->
+            <div class="article-image">
+                <img src="文字和图片素材/23.png" alt="业务培训">
+                <div class="article-image-caption">气象人员开展业务学习和技能培训</div>
+            </div>
+
+            <p>为提升气象保障能力，机场气象部门定期组织业务培训和技能学习，不断提高气象观测人员的专业素质和业务水平。通过理论学习和实操训练相结合的方式，确保每一位气象工作人员都能熟练掌握各类设备的操作和维护技能。</p>
+
+            <p>下一步，机场气象部门将继续强化设备维护管理，完善应急保障机制，加强与各部门的协调配合，全力做好气象保障工作，为机场安全运行和航班正常运行提供坚实的气象支撑。</p>
+        </div>
+    </div>
+</body>
+</html>
